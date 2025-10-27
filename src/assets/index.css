@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  background-color: #34656d;
+  font-family: "Lato", "Arial";
+  height: 100dvh;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  overflow: scroll;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  vertical-align: middle;
+  font-size: 40px;
+}
+
+.add_circle {
+  color: #f2eddd;
+}
+
+.cancel {
+  color: #f04444;
+  font-size: 20px;
+}
+
+.edit {
+  color: #f2eddd;
+  font-size: 20px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+button:hover .material-symbols-outlined {
+  color: #faeab1; /* azul, por ejemplo */
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+.form-input {
+  background-color: #f2eddd;
+  width: 100%;
+
+  color: #334443;
+  font-size: 12px;
+  padding: 10px 15px;
+  border: none;
+}

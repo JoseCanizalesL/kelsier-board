@@ -1,0 +1,43 @@
+.taskframe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  /* overflow: scroll; */
+  gap: 50px;
+  padding: 20px 80px;
+
+  background-color: #34656d;
+  color: #f2eddd;
+  text-align: center;
+}
+
+.taskForm {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  gap: 15px;
+
+  width: 100%;
+}
+
+.tasklist {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  text-align: left;
+  gap: 15px;
+  overflow: scroll;
+
+  width: 100%;
+}
+
+.taskItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+
+  width: 100%;
+}
