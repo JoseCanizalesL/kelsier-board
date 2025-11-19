@@ -1,24 +1,16 @@
-import styles from "../assets/Sidebar.module.css";
+import styles from "./Sidebar.module.css";
 import ProjectList from "../Components/Sidebar/ProjectList";
 import Form from "../Components/Form";
+import { useProjects } from "../Context/ProjectProvider";
 
-export default function Sidebar({
-  projecList,
-  onAddProject,
-  onDeleteProject,
-  onSelectProject,
-}) {
+export default function Sidebar() {
+  const { projectList, onAddProject } = useProjects();
   return (
     <div className={styles.sidebar}>
       <h2 className={styles.sidebarTitle}>Your Projects</h2>
-      <Form styles={styles} onSubmit={onAddProject} />
-      {projecList.length > 0 ? (
-        <ProjectList
-          styles={styles}
-          projectList={projecList}
-          onDeleteProject={onDeleteProject}
-          onSelectProject={onSelectProject}
-        />
+      <Form onSubmit={onAddProject} />
+      {projectList.length > 0 ? (
+        <ProjectList />
       ) : (
         <h3>Start by adding a project with the input above!</h3>
       )}

@@ -1,21 +1,14 @@
+import { useProjects } from "../../Context/ProjectProvider";
 import ProjectItem from "./ProjectItem";
 
-export default function ProjectList({
-  styles,
-  projectList,
-  onDeleteProject,
-  onSelectProject,
-}) {
+import styles from "./ProjectList.module.css";
+
+export default function ProjectList() {
+  const { projectList } = useProjects();
   return (
     <div className={`${styles.projectList}`}>
       {projectList.map((project) => (
-        <ProjectItem
-          styles={styles}
-          project={project}
-          onDeleteProject={onDeleteProject}
-          onSelectProject={onSelectProject}
-          key={project.id}
-        />
+        <ProjectItem project={project} key={project.id} />
       ))}
     </div>
   );

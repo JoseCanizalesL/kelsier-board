@@ -1,10 +1,8 @@
+import styles from "./ProjectItem.module.css";
 import Button from "../Button";
-export default function ProjectItem({
-  styles,
-  project,
-  onDeleteProject,
-  onSelectProject,
-}) {
+import { useProjects } from "../../Context/ProjectProvider";
+export default function ProjectItem({ project }) {
+  const { onDeleteProject, onSelectProject } = useProjects();
   const isFinished =
     project.taskList.length > 0
       ? project.taskList.reduce(

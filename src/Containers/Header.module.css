@@ -9,15 +9,7 @@
   color: #334443;
   padding-left: 120px;
 }
-.title {
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-  align-items: center;
-}
-.icon {
-  height: 70px;
-}
+
 h1 {
   font-size: 40px;
   color: #334443;

@@ -1,0 +1,11 @@
+.tasklist {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  text-align: left;
+  gap: 15px;
+  overflow: scroll;
+
+  width: 100%;
+}

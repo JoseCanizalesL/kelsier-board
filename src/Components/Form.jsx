@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-export default function Form({ styles, onSubmit }) {
+import styles from "./Form.module.css";
+
+export default function Form({ onSubmit }) {
   const [value, setValue] = useState("");
   function handleSubmit(e) {
     e.preventDefault();

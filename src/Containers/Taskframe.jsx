@@ -1,12 +1,14 @@
-import styles from "../../assets/Taskframe.module.css";
-import Form from "../Form";
-import Tasklist from "./Tasklist";
+import styles from "./Taskframe.module.css";
 
-export default function Taskframe({
-  selectedProjectId,
-  projectList,
-  onEditProject,
-}) {
+import { useProjects } from "../Context/ProjectProvider";
+
+import Form from "../Components/Form";
+import Tasklist from "../Components/Taskframe/Tasklist";
+import TaskItem from "../Components/Taskframe/TaskItem";
+
+export default function Taskframe() {
+  const { selectedProjectId, projectList, onEditProject } = useProjects();
+
   const selectedProjectBody = projectList.find(
     (curr) => curr.id === selectedProjectId
   );
@@ -48,16 +50,20 @@ export default function Taskframe({
       ) : (
         <>
           <h2>{selectedProjectBody.title}</h2>
-          <Form styles={styles} onSubmit={handleAddTask} />
+          <Form onSubmit={handleAddTask} />
         </>
       )}
       {selectedProjectBody && (
-        <Tasklist
-          styles={styles}
-          selectedProject={selectedProjectBody}
-          onDeleteTask={handleDeleteTask}
-          onToggleTask={handleToggleTask}
-        />
+        <Tasklist>
+          {selectedProjectBody.taskList.map((task) => (
+            <TaskItem
+              task={task}
+              onDeleteTask={handleDeleteTask}
+              onToggleTask={handleToggleTask}
+              key={task.id}
+            />
+          ))}
+        </Tasklist>
       )}
     </div>
   );

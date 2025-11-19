@@ -1,5 +1,7 @@
-import styles from "../../assets/TaskFrame.module.css";
+import styles from "./TaskItem.module.css";
+
 import Button from "../Button";
+
 export default function TaskItem({ task, onDeleteTask, onToggleTask }) {
   return (
     <div className={styles.taskItem}>
@@ -10,7 +12,7 @@ export default function TaskItem({ task, onDeleteTask, onToggleTask }) {
         checked={task.isComplete}
         onChange={() => onToggleTask(task.id)}
       />
-      <span>{task.task}</span>
+      <span>{task.isComplete ? <s>{task.task}</s> : task.task}</span>
     </div>
   );
 }
